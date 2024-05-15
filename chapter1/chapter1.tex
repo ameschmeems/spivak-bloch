@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{theorem}{Theorem}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{corollary}{Corollary}
+
+\begin{document}
+
+\subsubsection*{19. The fact that $a^2 \ge 0$ for all numbers $a$, elementary as it may seem, is nevertheless the fundamental idea upon which most important inequalities are ultimately based. The great-granddaddy of all inequalities is the \textit{Schwarz inequality}: \[x_1y_1 + x_2y_2 \le \sqrt{{x_1}^2 + {x_2}^2}\sqrt{{y_1}^2 + {y_2}^2}.\] The three proofs of the Schwarz inequality outlined below have only one thing in common - their reliance on the fact that $a^2 \ge 0$ for all $a$.}
+\begin{enumerate}
+	\item[(a)] Prove that if $x_1 = \lambda y_1$ and $x_2 = \lambda y_2$ for some number $\lambda \ge 0$, then equality holds in the Schwarz inequality. Prove the same thing if $y_1 = y_2 = 0$. Now suppose that $y_1$ and $y_2$ are not both 0, and that there is no number $\lambda$ such that $x_1 = \lambda y_1$ and $x_2 = \lambda y_2$. Then \[0 < (\lambda y_1 - x_1)^2 + (\lambda y_2 - x_2)^2 = \lambda^2(y_1^2 + y_2^2) - 2\lambda (x_1y_1 + x_2y_2) + (x_1^2 + x_2^2)\] Using problem 18, complete the proof of the Schwarz inequality.
+	\begin{proof}
+		Suppose that for some number $\lambda \ge 0$, $x_1 = \lambda y_1$ and $x_2 = \lambda y_2$. Then
+		\begin{align*}
+			\sqrt{x_1^2 + x_2^2}\sqrt{y_1^2 + y_2^2} &= \sqrt{x_1^2 + x_2^2}\sqrt{(\lambda x_1)^2 + (\lambda x_2)^2} = \sqrt{x_1^2 + x_2^2}\sqrt{\lambda^2(x_1^2 + x_2^2)} \\&= \lambda (\sqrt{x_1^2 + x_2^2})^2 = \lambda(x_1^2 + x_2^2) = \lambda x_1^2 + \lambda x_2^2 \\&= x_1\lambda x_1 + x_2\lambda x_2 = x_1y_1 + x_2y_2,
+		\end{align*}
+		so equality holds.
+		\\Next, suppose that $y_1 = y_2 = 0$. Then
+		\begin{align*}
+			\sqrt{x_1^2 + x_2^2}\sqrt{y_1^2 + y_2^2} = \sqrt{x_1^2 + x_2^2}\sqrt{0} = 0\sqrt{x_1^2 + x_2^2} = 0 = 0x_1 + 0x_2 = x_1y_1 + x_2y_2.
+		\end{align*}
+		Finally, suppose that $y_1$ and $y_2$ are not both 0, and that there is no number $\lambda$ such that $x_1 = \lambda y_1$ and $x_2 = \lambda y_2$. Then the equation $\lambda^2(y_1^2 + y_2^2) - 2\lambda(x_1y_1 + x_2y_2) + (x_1^2 + x_2^2) = 0$ has no solution $\lambda$. We can then divide by $(y_1^2 + y_2^2)$ to obtain $\lambda^2 + (\frac{-2(x_1y_1 + x_2y_2)}{(y_1^2 + y_2^2)})\lambda + \frac{(x_1^2 + x_2^2)}{(y_1^2 + y_2^2)} = 0$. Then if $b = \frac{-2(x_1y_1 + x_2y_2)}{y_1^2 + y_2^2}$ and $c = \frac{x_1^2 + x_2^2}{y_1^2 + y_2^2}$, from problem 18, we have $b^2 - 4c < 0$. Then \[ b^2 - 4c = (\frac{-2(x_1y_1 + x_2y_2)}{y_1^2 + y_2^2})^2 - \frac{4(x_1^2 + x_2^2)}{y_1^2 + y_2^2} = \frac{4(x_1y_1 + x_2y_2)^2}{(y_1^2 + y_2^2)^2} - \frac{4(x_1^2 + x_2^2)}{y_1^2 + y_2^2}, \] so \[(x_1y_1 + x_2y_2)^2 - (x_1^2 + x_2^2)(y_1^2 + y_2^2) < 0,\] which finally results in \[(x_1y_1 + x_2y_2) < \sqrt{x_1^2 + x_2^2}\sqrt{y_1^2 + y_2^2}.\]
+	\end{proof}
+	\pagebreak
+	\item[(b)] Prove the Schwarz inequality by using $2xy \le x^2 + y^2$ with $x = \frac{x_i}{\sqrt{{x_1}^2 + {x_2}^2}}$ and $y = \frac{y_i}{\sqrt{{y_1}^2 + {y_2}^2}}$ first for $i = 1$ and then for $i = 2$.
+	\begin{proof}
+		Let $x = \frac{x_i}{\sqrt{{x_1}^2 + {x_2}^2}}$ and $y = \frac{y_i}{\sqrt{{y_1}^2 + {y_2}^2}}$ for $i=1$. Then \[2xy = 2 \frac{x_1y_1}{\sqrt{{x_1}^2 + {x_2}^2}\sqrt{{y_1}^2 + {y_2^2}}} \text{ and } x^2 + y^2 = \frac{{x_1}^2}{{x_1}^2 + {x_2}^2} + \frac{{y_1}^2}{{y_1}^2 + {y_2}^2}.\] Next, for $i=2$ \[2xy = 2 \frac{x_2y_2}{\sqrt{{x_1}^2 + {x_2}^2}\sqrt{{y_1}^2 + {y_2^2}}} \text{ and } x^2 + y^2 = \frac{{x_2}^2}{{x_1}^2 + {x_2}^2} + \frac{{y_2}^2}{{y_1}^2 + {y_2}^2}.\] Knowing that $2xy \le x^2 + y^2$, derived from $(x - y)^2 \ge 0$, we can sum the inequalities to obtain \[ 2(\frac{x_1y_1 + x_2y_2}{\sqrt{{x_1}^2 + {x_2}^2}\sqrt{{y_1}^2 + {y_2}^2}}) \le \frac{{x_1}^2 + {x_2}^2}{{x_1}^2 + {x_2}^2} + \frac{{y_1}^2 + {y_2}^2}{{y_1}^2 + {y_2}^2} = 2, \] so \[ \frac{x_1y_1 + x_2y_2}{\sqrt{{x_1}^2 + {x_2}^2}\sqrt{{y_1}^2 + {y_2}^2}} \le 1 \text{ and } x_1y_1 + x_2y_2 \le \sqrt{{x_1}^2 + {x_2}^2}\sqrt{{y_1}^2 + {y_2}^2}.\]
+	\end{proof}
+	\item[(c)] Prove the Schwarz inequality by first proving that \[ ({x_1}^2 + {x_2}^2)({y_1}^2 + {y_2}^2) = (x_1y_1 + x_2y_2)^2 + (x_1y_2 - x_2y_1)^2. \]
+	\begin{proof}
+		For some numbers $x_1, x_2, y_1, y_2$, we have
+		\begin{align*}
+			(x_1y_1 + x_2y_2)^2 + (x_1y_2 - x_2y_1)^2 &= {x_1}^2{y_1}^2 + 2x_1x_2y_1y_2 + {x_2}^2{y_2}^2 + {x_1}^2{y_2}^2 - 2x_1x_2y_1y_2 + {x_2}^2{y_1}^2 \\&= {x_1}^2{y_1}^2 + {x_2}^2{y_1}^2 + {x_1}^2{y_2}^2 + {x_2}^2{y_2}^2 \\&= ({x_1}^2 + {x_2}^2)({y_1}^2 + {y_2}^2).
+		\end{align*}
+		Then since $(x_1y_2 - x_2y_1)^2 \ge 0$, we have \[ (x_1y_1 + x_2y_2)^2 \le ({x_1}^2 + {x_2}^2)({y_1}^2 + {y_2}^2) \text{ and } x_1y_2 + x_2y_2 \le \sqrt{{x_1}^2 + {x_2}^2}\sqrt{{y_1}^2 + {y_2}^2}. \]
+	\end{proof}
+	\item[(d)] Deduce, from each of these three proofs, that equality holds only when $y_1 = y_2 = 0$ or when there is a number $\lambda \ge 0$ such that $x_1 = \lambda y_1$ and $x_2 = \lambda y_2$.
+	\begin{proof}
+		For proof (a), it is already shown that if $y_1$ and $y_2$ are not both 0, and there is no number $\lambda \ge 0$ such that $x_1 = \lambda y_1$ and $x_2 = \lambda y_2$, then $x_1y_1 + x_2y_2 < \sqrt{{x_1}^2 + {x_2}^2}\sqrt{{y_1}^2 + {y_2}^2}$.
+		For proof (b) we used the fact that $(x - y)^2 \ge 0$. Equality then holds when $x = y$, so \[ \frac{x_i}{\sqrt{{x_1}^2 + {x_2}^2}} = \frac{y_i}{\sqrt{{y_1}^2 + {y_2}^2}} \text{ and } x_i = y_i\frac{\sqrt{{x_1}^2 + {x_2}^2}}{\sqrt{{y_1}^2 + {y_2}^2}}, \] so $x_i = \lambda y_i$.
+
+		For proof (c), we've shown that equality holds when $(x_1y_2 - x_2y_1)^2 = 0$, so when $x_1y_2 = x_2y_1$. Then either $y_1 = y_2 = 0$, or if we assume without loss of generality that $y_2 \ne 0$, we can take $\lambda = \frac{x_2}{y_2}$ so $x_1 = \lambda y_1$ and $x_2 = \lambda y_2$.
+	\end{proof}
+\end{enumerate}
+
+\end{document}
