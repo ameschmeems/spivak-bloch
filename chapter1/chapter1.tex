@@ -66,7 +66,7 @@
 	We have $|y_0| = |(y_0 - y) + y| \le |y - y_0| + |y|$, so since $|y - y_0| < \frac{|y_0|}{2}$, then \[ |y| \ge |y_0| - |y - y_0| > |y_0| - \frac{|y_0|}{2} = \frac{|y_0|}{2}. \] Then \[ \left|\frac{1}{y} - \frac{1}{y_0}\right| = \left|\frac{y_0 - y}{yy_0}\right| = \frac{|y - y_0|}{|y||y_0|} < \frac{\frac{\epsilon|y_0|^2}{2}}{|y||y_0|} < \frac{\frac{\epsilon|y_0|^2}{2}}{\frac{|y_0|}{2}|y_0|} = \epsilon \]
 \end{proof}
 \pagebreak
-\subsubsection*{23. Replace the question marks in the following statement by expressions involving $\lambda, x_0$ and $y_0$, so that the conclusion will be true:}
+\subsubsection*{23. Replace the question marks in the following statement by expressions involving $\epsilon, x_0$ and $y_0$, so that the conclusion will be true:}
 If $y_0 \ne 0$ and \[ \left|y - y_0\right| < ? \text{ and } \left|x - x_0\right|< ? \] then $y \ne 0$ and \[ \left|\frac{x}{y} - \frac{x_0}{y_0}\right| < \epsilon. \]
 \begin{proof}
 	We've shown in problem 21, that if $|x - x_0| < \text{min}(\frac{\epsilon}{2(|y_0| + 1)}, 1)$ and $|y - y_0| < \frac{\epsilon}{2(|x_0| + 1)}$, then $|xy - x_0y_0| < \epsilon$. Then for $\left|\frac{x}{y} - \frac{x_0}{y_0}\right| < \epsilon$ to be true, we want $|x - x_0| < \text{min}(\frac{\epsilon}{2(|y_0| + 1)}, 1)$ and we need to find a condition for $|y - y_0| < ?$ such that $|\frac{1}{y} - \frac{1}{y_0}| < \frac{\epsilon}{2(|x_0| + 1)}$. We can then substitute $\epsilon$ in problem 22 for $\frac{\epsilon}{2(|x_0| + 1)}$, so \[ |y - y_0| < min(\frac{|y_0|}{2}, \frac{\epsilon|y_0|^2}{4(|x_0| + 1)}). \]
