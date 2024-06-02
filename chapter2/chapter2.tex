@@ -49,4 +49,21 @@
 	\end{proof}
 \end{enumerate}
 
+\subsubsection*{3. If $0 \le k \le n$, the "binomial coefficient" $\binom{n}{k}$ is defined by \[ \binom{n}{k} = \frac{n!}{k!(n - k)!} = \frac{n(n - 1)\dots(n - k + 1)}{k!}\text{, if }k \ne 0, n \] \[ \binom{n}{0} = \binom{n}{n} = 1\text{ (a special case of the first formula if we define 0! = 1)}, \] and for $k < 0$ or $k > n$ we just define the binomial coefficient to be 0.}
+\begin{enumerate}
+	\item[(a)] Prove that \[ \binom{n + 1}{k} = \binom{n}{k - 1} + \binom{n}{k} \]
+	
+	\begin{proof}
+		\begin{align*}
+			\binom{n}{k - 1} + \binom{n}{k} &= \frac{n!}{(k - 1)!(n - (k - 1))!} + \frac{n!}{k!(n - k)!} = \frac{kn!}{k!(n + 1 - k)!} + \frac{(n + 1 - k)n!}{k!(n + 1 - k)!} \\&= \frac{n!(k + n + 1 - k)}{k!(n + 1 - k)!} = \frac{(n + 1)!}{k!(n + 1 - k)!} = \binom{n + 1}{k}
+		\end{align*}
+	\end{proof}
+	\item[(b)] Notice that all the numbers in Pascal's triangle are natural numbers. Use part (a) to prove by induction that $\binom{n}{k}$ is always a natural number.
+	
+	\begin{proof}
+		Let $n = 1$. Then $\binom{1}{0} = 1$ and $\binom{1}{1} = 1$, so the binomial coefficient is always a natural number. Next, suppose that for some number $n$, and $0 \le k \le n$, $\binom{n}{k}$ is always a natural number. Then if $k = 0$ or $k = n + 1$, then $\binom{n + 1}{k} = 1$, which is a natural number. Otherwise, \[ \binom{n + 1}{k} = \binom{n}{k} + \binom{n}{k - 1}\text{, and } 1 \le k \le n, 0 \le k - 1 \le n - 1, \] so $\binom{n + 1}{k}$ is a sum of two natural numbers, and is therefore also a natural number.
+	\end{proof}
+	\item[(c)] Give another proof that $\binom{n}{k}$ is a natural number by showing that $\binom{n}{k}$ is the number of sets of exactly k integers chosen from $1, \dots, n$.
+\end{enumerate}
+
 \end{document}
