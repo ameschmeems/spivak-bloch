@@ -130,7 +130,49 @@
 	\item[(b)] Derive this result by setting $S = 1 + r + \dots + r^n$, multiplying this equation by $r$, and solving the two equations for $S$.
 	\begin{proof}
 		\[ S = 1 + r + \dots + r^n \text{ and } Sr = r + r^2 + \dots + r^{n+1}. \] Then \[ S(1 - r) = 1 + r + \dots + r^n - r - r^2 - \dots - r^{n+1} = 1 - r^{n+1}, \] so \[ S = \frac{1 - r^{n+1}}{1 - r} \]
+	\end{proof}21
+\end{enumerate} 
+
+\subsubsection*{6. The formula for $1^2 + \dots + n^2$ can be derived as follows. We begin with the formula \[(k + 1)^3 - k^3 = 3k^2 + 3k + 1.\] Writing this formula for $k = 1, \dots, n$ and adding, we obtain \[2^3 - 1^3 = 3 \cdot 1^2 + 3 \cdot 1 + 1\] \[ 3^3 - 2^3 = 3 \cdot 2^2 + 3 \cdot 2 + 1 \] \[\vdots\]\[ \frac{(n + 1)^3 - n^3 = 3n^2 + 3n + 1}{(n + 1)^3 - 1 = 4[1^2 + \dots + n^2] + 3[1 + \dots + n] + n.} \] Thus we can find $\sum_{k=1}^{n}k^2$ if we already know $\sum_{k=1}^{n}k$. Use this method to find}
+\begin{enumerate}
+	\item[(i)] $1^3 + \dots + n^3$.
+	\begin{proof}
+		We begin with \[ (k + 1)^4 - k^4 = 4k^3 + 6k^2 + 4k + 1 \]
+		Then we have
+		\begin{align*}
+			(n + 1)^4 - 1 = 4\sum_{j=1}^{n}j^3 + 6\sum_{k=1}^{n}k^2 + 4\sum_{l=1}^{n}l + n
+		\end{align*} so
+		\begin{align*}
+			\sum_{j=1}^{n}j^3 &= \frac{(n + 1)^4 - 1 - 6\sum_{k=1}^{n}k^2 - 4\sum_{l=1}^{n}l - n}{4} \\&= \frac{n^4 + 4n^3 + 6n^2 + 4n + 1 - 1 - 6\frac{n(n+1)(2n+1)}{6} - 4\frac{n(n+1)}{2} - n}{4} \\&= \frac{n^4 + 4n^3 + 6n^2 + 3n - 2n^3 - 3n^2 - n - 2n^2 -2n}{4} \\&= \frac{n^4}{4} + \frac{n^3}{2} + \frac{n^2}{4}
+		\end{align*}
+	\end{proof}
+	\item[(ii)] $1^4 + \dots + n^4$.
+	\begin{proof}
+		We begin with \[ (k + 1)^5 - k^5 = 5k^4 + 10k^3 + 10k^2 + 5k + 1 \]
+		Then we have
+		\begin{align*}
+			(n + 1)^5 - 1 = 5\sum_{i=1}^{n}i^4 + 10\sum_{j=1}^{n}j^3 + 10\sum_{k=1}^{n}k^2 + 5\sum_{l=1}^{n}l + n
+		\end{align*} so
+		\begin{align*}
+			\sum_{i=1}^{n}i^4 &= \frac{(n + 1)^5 - 1 - 10\sum_{j=1}^{n}j^3 - 10\sum_{k=1}^{n}k^2 - 5\sum_{l=1}^{n}l - n}{5} \\&= \frac{n^5 + 5n^4 + 10n^3 + 10n^2 + 5n - 5\left(\frac{n^4}{4} + \frac{n^3}{2} + \frac{n^2}{4}\right) - 10\frac{n(n + 1)(2n + 1)}{6} - 5\frac{n(n+1)}{2} - n}{5} \\&= \frac{n^5}{5} + \frac{n^4}{2} + \frac{n^3}{3} - \frac{n}{30}
+		\end{align*}
+	\end{proof}
+	\item[(iii)] $\frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \dots + \frac{1}{n(n + 1)}$.
+	\begin{proof}
+		We begin with \[ \frac{1}{k} - \frac{1}{k + 1} = \frac{1}{k(k+1)} \] Then we have
+		\begin{align*}
+			\sum_{j=1}^{n}\frac{1}{n(n + 1)} = 1 - \frac{1}{n + 1}
+		\end{align*}
+	\end{proof}
+	\item[(iv)] $\frac{3}{1^2 \cdot 2^2} + \frac{5}{2^2 \cdot 3^2} + \dots + \frac{2n + 1}{n^2(n + 1)^2}$.
+	\begin{proof}
+		We begin with \[ \frac{1}{(k+1)^2} - \frac{1}{k^2} = \frac{2k+1}{k^2(k+1)^2} \] Then we have
+		\begin{align*}
+			\sum_{j=1}^{n}\frac{2j+1}{j^2(j+1)^2} = \frac{1}{(n + 1)^2} - 1
+		\end{align*}
 	\end{proof}
 \end{enumerate}
+
+\subsubsection*{8. Prove that every natural number is either even or odd.}
 
 \end{document}
