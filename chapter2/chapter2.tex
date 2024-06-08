@@ -5,6 +5,7 @@
 
 \newtheorem{theorem}{Theorem}
 
+\newtheorem{lemma}{Lemma}
 \newtheorem*{definition}{Definition}
 \newtheorem*{corollary}{Corollary}
 
@@ -174,5 +175,57 @@
 \end{enumerate}
 
 \subsubsection*{8. Prove that every natural number is either even or odd.}
+\begin{proof}
+	Since $1 = 2 \cdot 0 + 1$, $1$ is obviously an odd number. Now suppose that some natural number $n$ is either odd or even. We consider two cases:
+
+	Case 1: $n$ is odd. Then $n = 2k + 1$ for some integer $k$, and $n+1 = 2k + 2 = 2(k + 1)$. Since $k + 1$ is an integer, $n + 1$ is even.
+
+	Case 2: $n$ is even. Then $n = 2k$ for some integer $k$, and $n + 1 = 2k + 1$, so $n + 1$ is odd.
+\end{proof}
+
+\subsubsection*{9. Prove that if a set $A$ of natural numbers contains $n_0$ and contains $k + 1$ whenever it contains $k$ then $A$ contains all natural number $\ge n_0$.}
+\begin{proof}
+	Suppose that a set $A$ of natural numbers contains $n_0$ and contains $k + 1$ whenever it contains $k$, and that there is some smallest element $i$, such that $i \notin A$ and $i > n_0$. Then $i - 1 \in A$, or else $i$ would not be the smallest such element. Since $i - 1 \in A$, $(i - 1) + 1 \in A$, so $i \in A$, which is a contradiction.
+\end{proof}
+
+\subsubsection*{10. Prove the principle of mathematical induction from the well-ordering principle.}
+\begin{proof}
+	Suppose that for some statement $P$, $A$ is the set of all natural numbers, for which $P$ is true, and that if $k \in A$, then $k + 1 \in A$. Then $A$ has a least member $n_0$, and contains all natural numbers $\ge n_0$, so if $1 \in A$, then $A$ is the set of all natural numbers, and therefore $P$ is true for all natural numbers.
+\end{proof}
+
+\subsubsection*{11. Prove the principle of complete induction from the ordinary principle of induction. Hint: If $A$ contains $1$ and $A$ contains $n + 1$ whenever it contains $1, \dots, n$, consider the set $B$ of all $k$ such that $1, \dots, k$ are all in $A$.}
+\begin{proof}
+	Suppose that for some statement $P$, $A$ is the set of all natural numbers for which $P$ is true, $1 \in A$, and whenever $1, \dots, n$ are all in $A$, then $n + 1 \in A$. Let $B$ be the set of all $k$ such that $1, \dots, k$ are all in $A$. Then obviously $1 \in B$. Now suppose that for some element $k$, $1, \dots, k$ are all in $A$, and therefore $k \in B$. Since $1, \dots, k$ are all in $A$, then $k + 1\in A$, so $1, \dots, k+1$ are all in $A$, and therefore $k + 1 \in B$. Then $B = N$, so $A = N$, and thus $P$ is true for all natural numbers.
+\end{proof}
+
+\subsubsection*{12.}
+\begin{enumerate}
+	\item[(a)] If $a$ is rational and $b$ is irrational, is $a + b$ necessarily irrational? What if $a$ and $b$ are both irrational?
+	\begin{proof}
+		Suppose that for some rational number $a$ and some irrational $b$, $a + b$ is rational. Then $a + b = \frac{x}{y}$ with $x, y$ being integers. Then $b = \frac{x}{y} - a = \frac{x - ay}{y}$ so $b$ is rational, which is a contradiction.
+	\end{proof}
+	\item[(b)] If $a$ is rational and $b$ is irrational, is $ab$ necessarily irrational?
+	\begin{proof}
+		For some rational number $a$ and irrational $b$, $ab$ is rational if $a = 0$, since $0b = 0$ is rational. Suppose that $a \ne 0$ and $ab$ is rational. Then $ab = \frac{x}{y}$ for some integers $x, y$, so $b = \frac{x}{ay}$, which would imply that $b$ is rational, which is a contradiction.
+	\end{proof}
+	\item[(c)] Is there a number $a$ such that $a^2$ is irrational but $a^4$ is rational?
+	\begin{proof}
+		Consider $a = \sqrt{\sqrt{2}}$. Then $a^2 = \sqrt{2}$ but $a^4 = 2$.
+	\end{proof}
+	\item[(d)] Are there two irrational numbers whose sum and product are both rational?
+	\begin{proof}
+		Consider consider $a + \sqrt{2}$ and $a - \sqrt{2}$ with $a$ rational. Then $a + \sqrt{2} + a - \sqrt{2} = 2a$ which is rational, and $(a + \sqrt{2})(a - \sqrt{2}) = a^2 - 2$ which is rational.
+	\end{proof}
+\end{enumerate}
+
+\subsubsection*{13.}
+\begin{enumerate}
+	\item[(a)] Prove that $\sqrt{3}, \sqrt{5}$ and $\sqrt{6}$ are irrational. Hint: To treat $\sqrt{3}$ for example, use the fact that every integer is of the form $3n, 3n + 1$ or $3n + 2$. Why doesn't this proof work for $\sqrt{4}$.
+	\begin{proof}
+		Since \[ (3n + 1)^2 = 3(3n^2 + 2n) + 1 \]\[ (3n + 2)^2 = 3(3n^2 + 4n + 1) + 1 \] and \[ (3n)^2 = 3(3n)^2, \] it follows that if $k^2$ is divisible by $3$, then $k$ is also divisible by $3$. Suppose that $\sqrt{3}$ is rational, that is, there exist some integers $x, y$, $y\ne 0$ with no common divisor, such that $\sqrt{3} = \frac{x}{y}$. Then $(\frac{x}{y})^2 = 3$, so $x^2 = 3y^2$, so $x$ must be divisible by $3$. Then $x = 3z$ for some integer $z$, so $3y^2 = 9z^2$, and thus $y^2 = 3z^2$, which means that $y$ is divisible by $3$, which contradicts $x$ and $y$ having no common divisor, which means that $\sqrt{3}$ can not be rational.
+
+		$\sqrt{5}$ PROOF GOES HERE
+	\end{proof}
+\end{enumerate}
 
 \end{document}
