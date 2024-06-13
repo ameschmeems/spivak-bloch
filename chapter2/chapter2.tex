@@ -5,9 +5,15 @@
 
 \newtheorem{theorem}{Theorem}
 
-\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma}{Lemma}
 \newtheorem*{definition}{Definition}
 \newtheorem*{corollary}{Corollary}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 
 \begin{document}
 
@@ -41,7 +47,6 @@
 			\sum^{n}_{i = 1}(2i - 1) &= 1 + 2 + \dots + 2n - 2(1 + 2 + \dots + n) = \frac{2n(2n + 1)}{2} - 2\frac{n(n+1)}{2} \\&= n(2n + 1) - n(n + 1) = 2n^2 + n - n^2 - n = n^2.
 		\end{align*}
 	\end{proof}
-	\pagebreak
 	\item[(ii)] $\sum^{n}_{i = 1}(2i - 1)^2 = 1^2 + 3^2 + 5^2 + \dots + (2n - 1)^2$
 	\begin{proof}
 		\begin{align*}
@@ -64,7 +69,6 @@
 	\begin{proof}
 		Let $n = 1$. Then $\binom{1}{0} = 1$ and $\binom{1}{1} = 1$, so the binomial coefficient is always a natural number. Next, suppose that for some number $n$, and $0 \le k \le n$, $\binom{n}{k}$ is always a natural number. Then if $k = 0$ or $k = n + 1$, then $\binom{n + 1}{k} = 1$, which is a natural number. Otherwise, \[ \binom{n + 1}{k} = \binom{n}{k} + \binom{n}{k - 1}\text{, and } 1 \le k \le n, 0 \le k - 1 \le n - 1, \] so $\binom{n + 1}{k}$ is a sum of two natural numbers, and is therefore also a natural number.
 	\end{proof}
-	\pagebreak
 	\item[(c)] Give another proof that $\binom{n}{k}$ is a natural number by showing that $\binom{n}{k}$ is the number of sets of exactly k integers chosen from $1, \dots, n$.
 	
 	\begin{proof}
@@ -82,7 +86,6 @@
 			(a + b)^{n + 1} &= (a + b)(a + b)^n = (a + b)\sum_{j = 0}^{n}\binom{n}{j}a^{n - j}b^j \\&= \sum_{j=0}^{n}\binom{n}{j}a^{n + 1 - j}b^j + \sum_{j=0}^{n}\binom{n}{j}a^{n - j}b^{j + 1} \\&= \sum_{j=0}^{n}\binom{n}{j}a^{n + 1 - j}b^j + \sum_{j = 1}^{n + 1}\binom{n}{j - 1}a^{n + 1 - j}b^j \\&= a^{n+1} + \sum_{j=1}^{n}(\binom{n}{j} + \binom{n}{j - 1})a^{n+1-j}b^j + b^{n + 1} \\&= a^{n+1} + \sum_{j=1}^{n}\binom{n+1}{j}a^{n+1-j}b^j + b^{n+1} \\&= \sum_{j=0}^{n+1}a^{n+1-j}b^j.
 		\end{align*}
 	\end{proof}
-	\pagebreak
 	\item[(e)] Prove that
 	\begin{enumerate}
 		\item[(i)] \[ \sum_{j=0}^{n}\binom{n}{j} = \binom{n}{0} + \dots + \binom{n}{n} = 2^n \]
@@ -131,7 +134,7 @@
 	\item[(b)] Derive this result by setting $S = 1 + r + \dots + r^n$, multiplying this equation by $r$, and solving the two equations for $S$.
 	\begin{proof}
 		\[ S = 1 + r + \dots + r^n \text{ and } Sr = r + r^2 + \dots + r^{n+1}. \] Then \[ S(1 - r) = 1 + r + \dots + r^n - r - r^2 - \dots - r^{n+1} = 1 - r^{n+1}, \] so \[ S = \frac{1 - r^{n+1}}{1 - r} \]
-	\end{proof}21
+	\end{proof}
 \end{enumerate} 
 
 \subsubsection*{6. The formula for $1^2 + \dots + n^2$ can be derived as follows. We begin with the formula \[(k + 1)^3 - k^3 = 3k^2 + 3k + 1.\] Writing this formula for $k = 1, \dots, n$ and adding, we obtain \[2^3 - 1^3 = 3 \cdot 1^2 + 3 \cdot 1 + 1\] \[ 3^3 - 2^3 = 3 \cdot 2^2 + 3 \cdot 2 + 1 \] \[\vdots\]\[ \frac{(n + 1)^3 - n^3 = 3n^2 + 3n + 1}{(n + 1)^3 - 1 = 4[1^2 + \dots + n^2] + 3[1 + \dots + n] + n.} \] Thus we can find $\sum_{k=1}^{n}k^2$ if we already know $\sum_{k=1}^{n}k$. Use this method to find}
@@ -223,8 +226,57 @@
 	\item[(a)] Prove that $\sqrt{3}, \sqrt{5}$ and $\sqrt{6}$ are irrational. Hint: To treat $\sqrt{3}$ for example, use the fact that every integer is of the form $3n, 3n + 1$ or $3n + 2$. Why doesn't this proof work for $\sqrt{4}$.
 	\begin{proof}
 		Since \[ (3n + 1)^2 = 3(3n^2 + 2n) + 1 \]\[ (3n + 2)^2 = 3(3n^2 + 4n + 1) + 1 \] and \[ (3n)^2 = 3(3n)^2, \] it follows that if $k^2$ is divisible by $3$, then $k$ is also divisible by $3$. Suppose that $\sqrt{3}$ is rational, that is, there exist some integers $x, y$, $y\ne 0$ with no common divisor, such that $\sqrt{3} = \frac{x}{y}$. Then $(\frac{x}{y})^2 = 3$, so $x^2 = 3y^2$, so $x$ must be divisible by $3$. Then $x = 3z$ for some integer $z$, so $3y^2 = 9z^2$, and thus $y^2 = 3z^2$, which means that $y$ is divisible by $3$, which contradicts $x$ and $y$ having no common divisor, which means that $\sqrt{3}$ can not be rational.
+	\end{proof}
+	\begin{proof}
+		Since \[ (5n + 1)^2  = 5(5n^2 + 2n) + 1 \]\[(5n + 2)^2 = 5(5n^2 + 4n) + 4\]\[(5n + 3)^2 = 5(5n^2 + 6n + 1) + 4\]\[(5n + 4)^2 = 5(5n^2 + 8n + 3) + 1\] and \[(5n)^2 = 5(5n^2),\] it follows that if $k^2$ is divisible by $5$, then $k$ is also divisible by $5$. Suppose that $\sqrt{5}$ is rational, that is, there exist some integers $x, y$, $y\ne 0$ with no common divisor, such that $\sqrt{5} = \frac{x}{y}$. Then $(\frac{x}{y})^2 = 5$, so $x^2 = 5y^2$, so $x$ must be divisible by 5. Then $x = 5z$ for some integer $z$, so $5y^2 = 25z^2$, and thus $y^2 = 5z^2$, which means that $y$ is divisible by $5$, which contradicts $x$ and $y$ having no common divisor, so $\sqrt{5}$ can not be rational.
+	\end{proof}
+	\begin{proof}
+		Since \[(6n + 1)^2 = 6(6n^2 + 2n) + 1\]\[(6n + 2)^2 = 6(6n^2 + 4n) + 4\]\[(6n + 3)^2 = 6(6n^2 + 6n + 1) + 3\]\[(6n + 4)^2 = 6(6n^2 + 8n + 2) + 4\]\[(6n + 5)^2 = 6(6n^2 + 10n + 4) + 1\] and \[(6n)^2 = 6(6n^2)\]it follows that if $k^2$ is divisible by $6$, then $k$ is also divisible by $6$. Suppose that $\sqrt{6}$ is rational, that is, there exist some integers $x, y$, $y \ne 0$ with no common divisor, such that $\sqrt{6} = \frac{x}{y}$. Then $(\frac{x}{y})^2 = 6$ so $x^2 = 6y^2$, so $x$ must be divisible by $6$. Then $x = 6z$ for some integer $z$, so $6y^2 = 36z^2$, and thus $y^2 = 6z^2$, which means that $y$ is divisible by $6$, which contradicts $x$ and $y$ having no common divisor, so $\sqrt{6}$ can not be rational.
+	\end{proof}
+	This proof doesn't work for $\sqrt{4}$ because \[ (4n + 2)^2 = 4(4n^2 + 4n + 1) \] so $k^2$ being divisible by $4$ does not imply $k$ is divisible by $4$.
+	\item[(b)] Prove that $\sqrt[3]{2}$ and $\sqrt[3]{3}$ are irrational.
+	\begin{proof}
+		Since \[(2n + 1)^3 = 2(4n^3 + 6n^2 + 3n) + 1\] and \[(2n)^3 = 2(4n^3),\] it follows that if $k^3$ is even, then $k$ is even. Suppose that $\sqrt[3]{2}$ is rational, that is, there exist some integers $x, y$, $y\ne 0$ with no common divisor, such that $\sqrt[3]{2} = \frac{x}{y}$. Then $(\frac{x}{y})^3 = 2$, so $x^3 = 2y^3$, which means that $x$ is even. Then $x = 2z$ for some integer $z$, so $2y^3 = 8z^3$, so $y^3 = 2(2z^3)$, which means that $y$ is also even, which contradicts $x$ and $y$ having no common divisor, so $\sqrt[3]{2}$ can not be rational.
+	\end{proof}
+	\begin{proof}
+		Since \[(3n + 1)^3 = 3(9n^3 + 9n^2 + n) + 1\]\[(3n + 2)^3 = 3(9n^3 + 18n^2 + 12n + 2) + 2\] and \[(3n)^3 = 3(9n^3)\] it follows that if $k^3$ is divisible by $3$, then $k$ is divisible by $3$. Suppose that $\sqrt[3]{3}$ is rational, that is, there exist some integers $x, y$, $y \ne 0$ with no common divisor, such that $\sqrt[3]{3} = \frac{x}{y}$. Then $(\frac{x}{y})^3 = 3$, so $x^3 = 3y^3$, which means that $x$ is divisible by $3$. Then $x = 3z$ for some integer $z$, so $3y^3 = 27z^3$, so $y^3 = 3(3z^3)$, which means that $y$ is also divisible by $3$, which contradicts $x$ and $y$ having no common divisor, so $\sqrt[3]{3}$ can not be rational.
+	\end{proof}
+\end{enumerate}
 
-		$\sqrt{5}$ PROOF GOES HERE
+\subsubsection*{17. It seems likely that $\sqrt{n}$ is irrational whenever the natural number $n$ is not the square of another natural number. Although the method of problem 13 may actually be used to treat any particular case, it is not clear in advance that it will always work, and a proof for the general case requires some extra information. A natural number $p$ is called a prime number if it is impossible to write $p = ab$ for natural numbers $a$ and $b$ unless one of these is $p$ and the other $1$; for conveniece we also agree that $1$ is not a prime number. The first few prime numbers are $2, 3, 5, 7, 11, 13, 17, 19$. If $n > 1$ is not a prime, then $n = ab$, with $a$ and $b$ both $< n$; if either $a$ or $b$ is not a prime, it can be factored similarly; continuing in this way proves that we can write $n$ as a product of primes. For example, $28 = 4 * 7 = 2 * 2 * 7$.}
+\begin{enumerate}
+	\item[(a)] Turn this argument into a rigorous proof by complete induction.
+	\begin{proof}
+		Let $A$ be the set of non-prime natural numbers bigger than $1$. Then the smallest element $a_0 = 4$, and $4 = 2 \cdot 2$, so it can be written as a product of primes.
+
+		Next, suppose that $a_0, a_1, \dots, a_n$ are all consecutive elements of $A$ and can be written as products of primes. Then $a_{n + 1} \in A$ is a non-prime natural number, so it can be written as $a_{n + 1} = ab$ with $a,b < a_{n + 1}$. Then either $a,b$ are prime, so $a_{n + 1}$ can be written as a product of primes, or if any of $a, b$ are not prime, then since they are smaller than $a_{n + 1}$, they themselves can be written as a product of primes, so $a_{n + 1}$ can be written as a product of primes.
+	\end{proof}
+	A fundamental theorem about integers, states that this factorization is unique, except for the order of the factors. Thus, for example, $28$ can never be written as a product of primes one of which is $3$, nor can it be written in a way that involves $2$ only once.
+	\item[(b)] Using this fact, prove that $\sqrt{n}$ is irrational unless $n = m^2$ for sume natural number $m$.
+	\begin{lemma}
+		A natural number $y$ is a square of another natural number $x$ if and only if each prime in its factorization appears an even number of times.
+		
+		Let $x$ be some natural number. Then $x$ can be written as a unique product of primes, say $p_1, p_2, \dots, p_n$. Then \[x^2 = x \cdot x = (p_1 \cdot p_2 \cdot \dots \cdot p_n)(p_1 \cdot p_2 \cdot \dots \cdot p_n) = {p_1}^2 \cdot {p_2}^2 \cdot \dots \cdot {p_n}^2\]so each prime in the factorization of $x^2$ appears an even number of times.
+
+		Now suppose that for some natural number $y$, each prime in its factorization appears an even number of times. Then \[y = p_1^2 \cdot p_2^2 \cdot \dots \cdot p_n^2 = (p_1 \cdot p_2 \cdot \dots \cdot p_n)(p_1 \cdot p_2 \cdot \dots \cdot p_n),\] so $y$ is the square of a natural number $x = (p_1 \cdot p_2 \cdot \dots \cdot p_n)$.
+	\end{lemma}
+	\begin{proof}
+		Suppose that for some natural number $n$, $\sqrt{n}$ is rational. Then $\sqrt{n} = \frac{a}{b}$ for some natural numbers $a$ and $b$, and $nb^2 = a^2$. Then the factorization of $nb^2$ is the same as the factorization of $a^2$, and in the factorizations of $a^2$ and $b^2$ each prime appears an even number of times. Then in the factorization of $n$ each prime also appears an even number of times, so $n$ is the square of another natural number.
+	\end{proof}
+	\item[(c)] Prove more generally that $\sqrt[k]{n}$ is irrational unless $n = m^k$.
+	\begin{lemma}
+		A natural number $y$ is the $k$-th power of another natural number $x$ if and only if each prime in its factorization appears a factor of $k$ times.
+
+		Let $x$ be some natural number. Then $x$ can be written as a unique product of primes, say $p_1, p_2, \dots, p_n$. Then \[x^k = (p_1 \cdot p_2 \cdot \dots \cdot p_n)^k = {p_1}^k \cdot {p_2}^2 \cdot \dots \cdot {p_n}^k \]so each prime in the factorization of $x^k$ appears a factor of $k$ times.
+
+		Now suppose that for some natural number $y$, each prime in its factorization appears a factor of $k$ times. Then \[y = {p_1}^k \cdot {p_2}^k \cdot \dots \cdot {p_n}^k = (p_1 \cdot p_2 \cdot \dots \cdot p_n)^k \]so $y$ is the $k$-th power of a natural number $x = (p_1 \cdot p_2 \cdot \dots \cdot p_n)$.
+	\end{lemma}
+	\begin{proof}
+		Suppose that for some natural number $n$, $\sqrt[k]{n}$ is rational. Then $\sqrt[k]{n} = \frac{a}{b}$ for some natural numbers $a$ and $b$, and $nb^k = a^k$. Then the factorization of $nb^k$ is the same as the factorization of $a^k$, and in the factorizations of $a^k$ and $b^k$ each prime appears a factor of $k$ times. Then in the factorization of $n$ each prime also appears an even number of times, so $n$ is the $k$-th power of another natural number.
+	\end{proof}
+	\item[(d)] No discussion of prime numbers should fail to allude to Euclid's beautiful proof that there are infinitely many of them. Prove that there cannot be only finitely many prime numbers $p_1, p_2, \dots, p_n$ by considering $p_1 \cdot p_2 \cdot \dots \cdot p_n + 1$.
+	\begin{proof}
+		Suppose that there are only finitely many prime numbers $p_1, p_2, \dots, p_n$. The number \[x = p_1 \cdot p_2 \cdot \dots \cdot p_n + 1\] is not divisible by any of $p_1, p_2, \dots, p_n$ (it would result in a remainder of 1), so either $x$ is itself a prime $> p_n$, or it is a factor of primes bigger than $p_n$, which contradicts $p_n$ being the biggest prime number.
 	\end{proof}
 \end{enumerate}
 
