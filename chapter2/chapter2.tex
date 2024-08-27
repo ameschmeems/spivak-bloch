@@ -267,16 +267,42 @@
 	\begin{lemma}
 		A natural number $y$ is the $k$-th power of another natural number $x$ if and only if each prime in its factorization appears a factor of $k$ times.
 
-		Let $x$ be some natural number. Then $x$ can be written as a unique product of primes, say $p_1, p_2, \dots, p_n$. Then \[x^k = (p_1 \cdot p_2 \cdot \dots \cdot p_n)^k = {p_1}^k \cdot {p_2}^2 \cdot \dots \cdot {p_n}^k \]so each prime in the factorization of $x^k$ appears a factor of $k$ times.
+		Let $x$ be some natural number. Then $x$ can be written as a unique product of primes, say $p_1, p_2, \dots, p_n$. Then \[x^k = (p_1 \cdot p_2 \cdot \dots \cdot p_n)^k = {p_1}^k \cdot {p_2}^k \cdot \dots \cdot {p_n}^k \]so each prime in the factorization of $x^k$ appears a factor of $k$ times.
 
 		Now suppose that for some natural number $y$, each prime in its factorization appears a factor of $k$ times. Then \[y = {p_1}^k \cdot {p_2}^k \cdot \dots \cdot {p_n}^k = (p_1 \cdot p_2 \cdot \dots \cdot p_n)^k \]so $y$ is the $k$-th power of a natural number $x = (p_1 \cdot p_2 \cdot \dots \cdot p_n)$.
 	\end{lemma}
 	\begin{proof}
-		Suppose that for some natural number $n$, $\sqrt[k]{n}$ is rational. Then $\sqrt[k]{n} = \frac{a}{b}$ for some natural numbers $a$ and $b$, and $nb^k = a^k$. Then the factorization of $nb^k$ is the same as the factorization of $a^k$, and in the factorizations of $a^k$ and $b^k$ each prime appears a factor of $k$ times. Then in the factorization of $n$ each prime also appears an even number of times, so $n$ is the $k$-th power of another natural number.
+		Suppose that for some natural number $n$, $\sqrt[k]{n}$ is rational. Then $\sqrt[k]{n} = \frac{a}{b}$ for some natural numbers $a$ and $b$, and $nb^k = a^k$. Then the factorization of $nb^k$ is the same as the factorization of $a^k$, and in the factorizations of $a^k$ and $b^k$ each prime appears a factor of $k$ times. Then in the factorization of $n$ each prime also appears a factor of $k$ times, so $n$ is the $k$-th power of another natural number.
 	\end{proof}
 	\item[(d)] No discussion of prime numbers should fail to allude to Euclid's beautiful proof that there are infinitely many of them. Prove that there cannot be only finitely many prime numbers $p_1, p_2, \dots, p_n$ by considering $p_1 \cdot p_2 \cdot \dots \cdot p_n + 1$.
 	\begin{proof}
 		Suppose that there are only finitely many prime numbers $p_1, p_2, \dots, p_n$. The number \[x = p_1 \cdot p_2 \cdot \dots \cdot p_n + 1\] is not divisible by any of $p_1, p_2, \dots, p_n$ (it would result in a remainder of 1), so either $x$ is itself a prime $> p_n$, or it is a factor of primes bigger than $p_n$, which contradicts $p_n$ being the biggest prime number.
+	\end{proof}
+\end{enumerate}
+
+\subsubsection*{18.}
+
+\begin{enumerate}
+	\item[(a)] Prove that if $x$ satisfies \[x^n + a_{n-1}x^{n-1} + \dots + a_0 = 0\] for some integers $a_{n-1}, \dots, a_0$, then $x$ is irrational unless $x$ is an integer.
+	
+	\begin{proof}
+		Suppose that $x$ satisfies \[x^n + a_{n-1}x^{n-1} + \dots + a_0 = 0\] for some integers $a_{n-1}, \dots, a_0$, and that $x$ is rational, that is, $x = \frac{p}{q}$ where $p, q$ are integers with no common divisor. Then
+		\begin{align*}
+			x^n + a_{n-1}x^{n-1} + \dots + a_0 &= \left(\frac{p}{q}\right)^n + a_{n-1}\left(\frac{p}{q}\right)^{n-1} + \dots + a_0 = 0
+		\end{align*}, so
+		\begin{align*}
+			p^n + a_{n-1}p^{n-1}q + \dots + a_0q^n = 0 
+		\end{align*} and
+		\begin{align*}
+			p^n = -q\left(a_{n-1}p^{n-1} + \dots + a_0q^{n-1}\right).
+		\end{align*}
+		Then if $q = \pm1$, $x$ is an integer. If $q \ne \pm1$, then $q$ has some prime factor. Since $p^n$ is divisible by $q$, it is also divisible by that prime factor, and it follows that $p$ is also divisible by that factor, which contradicts $p$ and $q$ having no common divisor, so $x$ can not be rational.
+	\end{proof}
+
+	\item[(b)] Prove that $\sqrt{6} - \sqrt{2} - \sqrt{3}$ is irrational.
+	
+	\begin{proof}
+		Suppose that $x = \sqrt{6} - \sqrt{2} - \sqrt{3}$ is rational.
 	\end{proof}
 \end{enumerate}
 
