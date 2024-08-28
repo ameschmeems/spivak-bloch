@@ -302,7 +302,17 @@
 	\item[(b)] Prove that $\sqrt{6} - \sqrt{2} - \sqrt{3}$ is irrational.
 	
 	\begin{proof}
-		Suppose that $x = \sqrt{6} - \sqrt{2} - \sqrt{3}$ is rational.
+		Let $x = \sqrt{6} - \sqrt{2} - \sqrt{3}$. Then 
+		\begin{align*}
+			x^2 &= \left(\sqrt{6} - \sqrt{2} - \sqrt{3}\right)^2 \\&= 6 - 2\sqrt{6}\left(\sqrt{2} + \sqrt{3}\right) + 2 + 2\sqrt{6} + 3 \\&= 11 + 2\sqrt{6}\left(1 - \left(\sqrt{2} + \sqrt{3}\right)\right).
+		\end{align*} We then have
+		\begin{align*}
+			\left(x^2 - 11\right)^2 &=24\left(1 - 2\left(\sqrt{2} + \sqrt{3}\right)+ 2 + 2\sqrt{6} + 3\right) \\&= 24\left(6 + 2\left(\sqrt{6} - 
+			\sqrt{2} - \sqrt{3}\right)\right) \\&= 24\left(6 + 2x\right),
+		\end{align*} so
+		\begin{align*}
+			0 &= 24\left(6 + 2x\right) - \left(x^2 - 11\right)^2 \\&= -x^4 + 0x^3 + 22x^2 + 48x + 23,
+		\end{align*} so based on (a), $x$ is either irrational, or an integer.
 	\end{proof}
 \end{enumerate}
 
