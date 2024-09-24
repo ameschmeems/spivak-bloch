@@ -330,6 +330,19 @@
 
 	\item[(c)] Prove that $\sqrt{2} + \sqrt[3]{2}$ is irrational. Hint: start by working through the first 6 powers of this number.
 	
+	\begin{lemma}
+		If $a$ and $b$ are two numbers such that $0 < a < b$ then $\sqrt{a} < \sqrt{b}$ and $\sqrt[3]{a} < \sqrt[3]{b}$.
+
+		Let $x = \sqrt{a}$ and $y = \sqrt{b}$. Then \[0 < x^2 < y^2\]\[y^2 - x^2 > 0\]\[(y-x)(y+x) > 0\]\[y-x > 0\]\[y > x,\] so $0 < a < b$ implies $\sqrt{a}<\sqrt{b}$.
+		Then, let $x = \sqrt[3]{a}$ and $y = \sqrt[3]{b}$. Then
+		\[0 < x^3 < y^3\]
+		\[0 < y^3 - x^3\]
+		\[0 < (y - x)(y^2 + xy + y^2)\]
+		\[0 < y - x\]
+		\[x < y,\]
+		so $0 < a < b$ implies $\sqrt[3]{a} < \sqrt[3]{b}$.
+	\end{lemma}
+	
 	\begin{proof}
 		Let $x = \sqrt{2} + \sqrt[3]{2}$. Then:
 			\[x^1 = 2^{\frac{2}{6}} + 2^{\frac{3}{6}}\]
