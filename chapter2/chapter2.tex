@@ -367,4 +367,29 @@
 	\end{proof}
 \end{enumerate}
 
+\subsubsection*{19. Prove Bernoulli's inequality: If $h > -1$, then \[(1 + h)^n \ge 1 + nh \] for any natural number $n$. Why is this trivial if $h > 0$?}
+
+\begin{proof}
+	We proceed by induction. When $n = 1$, $(1 + h)^n = 1 + h = 1 + nh$. Now, suppose that the inequality holds true for some integer $n$. Then
+	\[(1 + h)^n \ge 1 + nh\]
+	\[(1+h)(1 + h)^n \ge (1 + h)(1 + nh)\]
+	\[(1 + h)^{n+1} \ge 1 + h + nh + nh^2\]
+	\[(1 + h)^{n+1} \ge 1 + (n + 1)h + nh^2.\]
+	Since $nh^2 \ge 0$
+	\[(1 + h)^{n+1} \ge 1 + (n + 1)h + nh^2 \ge 1 + (n+1)h.\]
+
+	This is trivial for $h > 0$ because after expanding the left side, it will be in the form $x + nh + 1$ with $x \ge 0$.
+\end{proof}
+
+\subsubsection*{21. The Schwarz inequality (Problem 1-19) actually has a more general form: \[\sum_{i=1}^{n}x_iy_i \le \sqrt{\sum_{i=1}^{n}{x_i}^2}\sqrt{\sum_{i=1}^{n}{y_i}^2}.\] Give three proofs of this, analogous to the three proofs in Problem 1-19.}
+
+\begin{proof}
+	\[\text{Let }x = \frac{x_i}{\sqrt{\sum_{j=1}^{n}{x_j}^2}}\text{ and } y = \frac{y_i}{\sqrt{\sum_{j=1}^{n}{j_i}^2}}\]
+	Then \[2xy = 2\frac{x_iy_i}{\sqrt{\sum_{j=1}^{n}{x_j}^2}\sqrt{\sum_{j=1}^{n}{y_j}^2}}\text{ and } x^2 + y^2 = \frac{{x_i}^2}{\sum_{j=1}^{n}{x_j}^2} + \frac{{y_i}^2}{\sum_{j=1}^{n}{y_j}^2}.\]
+	Then, because $2xy \le x^2 + y^2$,
+	\[2\frac{x_iy_i}{\sqrt{\sum_{j=1}^{n}{x_j}^2}\sqrt{\sum_{j=1}^{n}{y_j}^2}} \le \frac{{x_i}^2}{\sum_{j=1}^{n}{x_j}^2} + \frac{{y_i}^2}{\sum_{j=1}^{n}{y_j}^2}\]
+	\[2\frac{\sum_{i=1}^{n}x_iy_i}{\sqrt{\sum_{j=1}^{n}{x_j}^2}\sqrt{\sum_{j=1}^{n}{y_j}^2}} \le \frac{\sum_{i=1}^{n}{x_i}^2}{\sum_{j=1}^{n}{x_j}^2} + \frac{\sum_{j=1}^{n}{y_j}^2}{\sum_{j=1}^{n}{y_j}^2} = 2\]
+	\[\frac{\sum_{i=1}^{n}x_iy_i}{\sqrt{\sum_{j=1}^{n}{x_j}^2}\sqrt{\sum_{j=1}^{n}{y_j}^2}} \le 1,\] so \[\sum_{i=1}^{n}x_iy_i \le \sqrt{\sum_{j=1}^{n}{x_j}^2}\sqrt{\sum_{j=1}^{n}{y_j}^2}\]
+\end{proof}
+
 \end{document}
