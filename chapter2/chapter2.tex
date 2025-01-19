@@ -392,4 +392,41 @@
 	\[\frac{\sum_{i=1}^{n}x_iy_i}{\sqrt{\sum_{j=1}^{n}{x_j}^2}\sqrt{\sum_{j=1}^{n}{y_j}^2}} \le 1,\] so \[\sum_{i=1}^{n}x_iy_i \le \sqrt{\sum_{j=1}^{n}{x_j}^2}\sqrt{\sum_{j=1}^{n}{y_j}^2}\]
 \end{proof}
 
+\subsubsection*{22. The result in problem 1-7 has an important generalization: If $a_1, \dots, a_n \ge 0$, then the "arithmetic mean" \[A_n = \frac{a_1 + \dots + a_n}{n}\] and "geometric mean" \[G_n = \sqrt[n]{a_1\dots a_n}\] satisfy \[G_n \le A_n.\]}
+\begin{enumerate}
+	\item[(a)] Suppose that $a_1 < A_n$. Then some $a_i$ satisfies $a_i > A_n$; for convenience, say $a_2 > A_n$. Let $\overline{a}_1 = A_n$ and let $\overline{a}_2 = a_1 + a_2 - \overline{a}_1$. Show that \[\overline{a}_1\overline{a}_2 \ge a_1a_2.\] Why does repeating this process enough times eventually prove that $G_n \le A_n$? (This is another place where it is a good exercise to provide a formal proof by induction, as well as an informal reason.) When does equality hold in the formula $G_n \le A_n$?
+	
+	\begin{proof}
+		We have \[0 \ge (A_n - a_1)(A_n - a_2)\]since $a_1 < A_n < a_2$. Then
+		\[0 \ge a_1a_2 - A_na_1 - A_na_2 + {A_n}^2\]
+		\[0 \ge a_1a_2 - A_n(a_1 + a_2 - A_n)\]
+		\[A_n(a_1 + a_2 - A_n) \ge a_1a_2\]
+		\[\overline{a}_1\overline{a}_2 \ge a_1a_2.\]
+
+		$G_n = A_n$ when $a_1 = a_2 = \dots = a_n$ since
+		\[G_n = \sqrt[n]{a_1a_2\dots a_n} = \sqrt[n]{{a_n}^n} = a_n\] and\[A_n = \frac{a_1 + a_2 + \dots + a_n}{n} = \frac{na_n}{n} = a_n\]
+
+		Suppose we have a set of numbers $a_1, a_2, \dots, a_n$, not all the same. Then there exist $a_i, a_j$ such that $a_i < A_n < a_j$, for convenience let's say $a_1$ and $a_2$. We can replace them with $\overline{a}_1 = A_n$ and $\overline{a}_2 = (a_1 + a_2 - A_n)$. Since \[\frac{A_n + (a_1 + a_2 - A_n)}{n} = \frac{a_1 + a_2}{n},\] the mean $A_n$ remains the same, but since $\overline{a}_1\overline{a}_2 \ge a_1a_2$, the new geometric mean $G'_n \ge G_n$. We can repeat this process until we exhaust all such pairs, leaving us with $a_1 = a_2 = \dots = a_n = A_n$. Then the new geometric mean $G''_n = A_n$ and $G''_n \ge G_n$, so $A_n \ge G_n$.
+	\end{proof}
+	
+	The reasoning in this proof is related to another interesting proof.
+
+	\item[(b)] Using the fact that $G_n \le A_n$ when $n = 2$, prove, by induction on $k$, that $G_n \le A_n$ for $n = 2^k$.
+	
+	\begin{proof}
+		Let $k = 1$. Then $n=2$, so we know that $G_n \le A_n$ is true.
+
+		Now suppose that $G_n \le A_n$ is true for some number $n = 2^k$, and let $m = 2^{k+1}$. Then \[G_m =\sqrt[m]{a_1\dots a_m} = \sqrt{\sqrt[n]{a_1\dots a_n}\sqrt[n]{a_{n+1}\dots a_m}}.\] Since we know that $G_2 \le A_2$, \[\sqrt{\sqrt[n]{a_1\dots a_n}\sqrt[n]{a_{n+1}\dots a_m}} \le \frac{\sqrt[n]{a_1\dots a_2} + \sqrt[n]{a_{n+1}\dots a_m}}{2}.\] Also, since $G_n \le A_n$, \[\frac{\sqrt[n]{a_1\dots a_2} + \sqrt[n]{a_{n+1}\dots a_m}}{2} \le \frac{\frac{a_1 + \dots + a_n}{n} + \frac{a_{n+1} + \dots + a_m}{n}}{2} = \frac{a_1 + \dots + a_m}{2n} = A_m,\] so $G_m \le A_m$.
+	\end{proof}
+
+	\item[(c)] For a general $n$, let $2^m > n$. Apply part (b) to the $2^m$ numbers \[a_1, \dots, a_n, \underbrace{A_n, \dots, A_n}_{2^m-n~\text{times}}\] to prove that $G_n \le A_n$.
+	
+	\begin{proof}
+		Let $k = 2^m - n$. Then
+		\[\sqrt[2^m]{a_1\dots a_nA_n^k} \le \frac{a_1 + \dots + a_n + kA_n}{2^m}\]
+		\[(a_1\dots a_n)A_n^k \le \left(\frac{a_1 + \dots + a_n + kA_n}{2^m}\right)^{2^m} = \left(\frac{nA_n + kA_n}{2^m}\right)^{2^m} = A_n^{2^m}\]
+		\[a_1\dots a_n \le A_n^{2^m - k} = A_n^n\] so $G_n \le A_n$
+	\end{proof}
+\end{enumerate}
+
 \end{document}
