@@ -429,4 +429,12 @@
 	\end{proof}
 \end{enumerate}
 
+\subsubsection*{23. The following is a recursive definition of $a^n$ \[a^1 = a,\]\[a^{n+1} = a^n \cdot a.\]Prove, by induction, that \[a^{n+m} = a^n \cdot a^m,\]\[(a^n)^m = a^{nm}\](Don't try to be fancy: use either induction on $n$ or induction on $m$, not both at once.)}
+
+\begin{proof}
+	Let $n = 1$. Then \[a^{n + m} = a^{m + 1} = a^m \cdot a,\] and \[(a^n)^m = a^m\] so the statement is true.
+
+	Now, suppose that $a^{n+m} = a^n \cdot a^m$ and $(a^n)^m = a^{nm}$ is true for some $n$. Then \[a^{n + 1 + m} = a^{(n + m) + 1} = a^n \cdot a^m \cdot a = a^{n+1} \cdot a^m,\] and \[(a^{n+1})^m = (a^n \cdot a)^m = a^{nm} \cdot a^m = a^{nm + m}.\]
+\end{proof}
+
 \end{document}
