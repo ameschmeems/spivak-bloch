@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{theorem}{Theorem}
+
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{definition}{Definition}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{axiom}{Axiom}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\begin{document}
+
+\section{Axioms for the natural numbers}
+
+\begin{axiom}
+	\textbf{(Peano Postulates).} There exists a set $\N$ with an element $1 \in \N$ and a function $s: \N \rightarrow \N$ that satisfy the following three properties.
+	\begin{enumerate}
+		\item[a.] There is no $n \in \N$ such that $s(n) = 1$.
+		\item[b.] The function is injective.
+		\item[c.] Let $G \subseteq \N$ be a set. Suppose that $1 \in G$ and that if $g \in G$ then $s(g) \in G$. Then $G = \N$.
+	\end{enumerate}
+\end{axiom}
+
+\begin{definition}
+	The set of \textbf{natural numbers}, denoted $\N$, is the set the existence of which is given in the Peano Postulates.
+\end{definition}
+
+\begin{theorem}
+	\textbf{(Definition by Recursion).} Let $H$ be a set, and let $e \in H$ and let $k: H \rightarrow H$ be a function. Then there is a unique function $f: \N \rightarrow H$ such that $f(1) = e$ and that $f \circ s = k \circ f$.
+\end{theorem}
+
+\begin{theorem}
+	There is a unique binary operation $+: \N \times \N \rightarrow \N$ that satisfies the following two properties for all $n,m \in \N$.
+	\begin{enumerate}
+		\item[a.] $n + 1 = s(n)$
+		\item[b.] $n + s(m) = s(n + m)$
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	There is a unique binary operation $\cdot : \N \times \N \rightarrow \N$ that satisfies the following two properties for all $n,m \in \N$.
+	\begin{enumerate}
+		\item[a.] $n \cdot 1 = n$
+		\item[b.] $n \cdot s(m) = (n \cdot m) + n$
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	Let $a, b, c \in \N$.
+	\begin{enumerate}
+		\item If $a + c = b + c$ then $a = b$ (Cancellation Law for Addition).
+		\item $(a + b) + c = a + (b + c)$ (Associative Law for Addition).
+		\item $1 + a = s(a) = a + 1$.
+		\item $a + b = b + a$ (Commutative Law for Addition).
+		\item $a + b \ne 1$.
+		\item $a + b \ne a$.
+		\item $a \cdot 1 = a = 1\cdot a$ (Identity Law for Multiplication).
+		\item $(a + b)c = ac + bc$ (Distributive Law).
+		\item $ab = ba$ (Commutative Law for Multiplication).
+		\item $(ab)c = a(bc)$ (Associative Law for Multiplication).
+		\item If $ac = bc$ then $a = b$ (Cancellation Law for Multiplication).
+		\item $ab = 1$ if and only if $a = 1 = b$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	The relation $<$ on $\N$ is defined by $a < b$ if and only if there is some $p \in \N$ such that $a + p = b$ for all $a,b \in \N$. The relation $\le$ on $\N$ is defined by $a \le b$ if and only if $a < b$ or $a = b$, for all $a, b \in \N$.
+\end{definition}
+
+\begin{theorem}
+	Let $a,b,c,d \in \N$.
+	\begin{enumerate}
+		\item $a \le a$ and $a \nless a$, and $a < a + 1$.
+		\item $1 \le a$.
+		\item If $a < b$ and $b < c$, then $a < c$; if $a \le b$ and $b < c$ then $a < c$; if $a < b$ and $b \le c$ then $a < c$; if $a \le b$ and $b \le c$ then $a \le c$.
+		\item $a < b$ if and only if $a + c < b + c$.
+		\item $a < b$ if and only if $ac < bc$.
+		\item Precisely one of $a < b$ or $a = b$ or $a > b$ holds (Trichotomy Law).
+		\item $a \le b$ or $b \le a$
+		\item If $a \le b$ and $b \le a$ then $a = b$.
+		\item It cannot be that $b < a < b + 1$.
+		\item $a \le b$ if and only if $a < b + 1$.
+		\item $a < b$ if and only if $a + 1 \le b$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	\textbf{(Well-Ordering Principle).} Let $G \subseteq \N$ be a non-empty set. Then there is some $m \in G$ such that $m \le g$ for all $g \in G$.
+\end{theorem}
+
+\subsection*{Exercises}
+
+\subsubsection*{1. Fill in the missing details in the proof of Theorem 1.2.6.}
+
+\end{document}
