@@ -100,4 +100,11 @@
 
 \subsubsection*{1. Fill in the missing details in the proof of Theorem 1.2.6.}
 
+\begin{proof}
+	To prove uniqueness, suppose that there are two binary operations $\cdot$ and $\times$ on $\N$ that satisfy the two properties of the theorem. Let \[G = \left\{x \in \N | n \cdot x = n \times x \text{ for all } n \in N\right\}.\]
+	Then $G \subseteq N$. By part (a) applied to both $\cdot$ and $\times$ we see that $n \cdot 1 = 1 = n \times 1$ for all $n \in \N$, so $1 \in G$. Now let $q \in G$ and $n \in N$. Then $n \cdot q = n \times q$. Then it follows from part (b) that \[n \cdot s(q) = (n \cdot q) + n = (n \times q) + n = n \times s(q).\] Then $s(q) \in G$, and therefore we can conclude using part (c) of the Peano Postulates that $G = \N$.
+
+	Let $q \in \N$. Let $h_q: \N \mapsto \N$ be defined by $h_q(m) = m + q$ for all $m \in \N$. Applying theorem 1.2.4 to the set $\N$, the element $q \in \N$ and the function $h_q: \N \mapsto \N$ implies that there is a unique function $g_q: \N \mapsto \N$ such that $g_q(1) = q$ and $g_q \circ s = h_q \circ g_q$. Let $\cdot: \N \times \N \mapsto \N$ be defined by $c \cdot d = g_c(d)$ for all $(c,d)\in \N \times \N$. Let $n,m \in \N$. Then $n \cdot 1 = g_n(1) = n$ which is part (a), and $n \cdot s(m) = g_n(s(m)) = (g_n \circ s)(m) = (h_n \circ g_n)(m) = h_n(g_n(m)) = (n \cdot m) + n$ which is part (b).
+\end{proof}
+
 \end{document}
