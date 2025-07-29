@@ -107,4 +107,24 @@
 	Let $q \in \N$. Let $h_q: \N \mapsto \N$ be defined by $h_q(m) = m + q$ for all $m \in \N$. Applying theorem 1.2.4 to the set $\N$, the element $q \in \N$ and the function $h_q: \N \mapsto \N$ implies that there is a unique function $g_q: \N \mapsto \N$ such that $g_q(1) = q$ and $g_q \circ s = h_q \circ g_q$. Let $\cdot: \N \times \N \mapsto \N$ be defined by $c \cdot d = g_c(d)$ for all $(c,d)\in \N \times \N$. Let $n,m \in \N$. Then $n \cdot 1 = g_n(1) = n$ which is part (a), and $n \cdot s(m) = g_n(s(m)) = (g_n \circ s)(m) = (h_n \circ g_n)(m) = h_n(g_n(m)) = (n \cdot m) + n$ which is part (b).
 \end{proof}
 
+\subsubsection*{2. Prove Theorem 1.2.7 (2, 3, 4, 7, 8, 9, 10, 11, 13)}
+
+\begin{enumerate}
+	\item[2.] $(a + b) + c = a + (b + c)$
+	\begin{proof}
+		Let \[G = \left\{z\in \N: \text{ if } x,y \in \N \text{ and } (x + y) + z = x + (y + z)\right\}.\]
+		Then $(x + y) + 1 = s(x + y) = x + s(y) = x + (y + 1)$, so $1 \in G$.
+		Now, let $z \in G$. Then 
+		\begin{align*}
+			(x + y) + s(z) &= (x + y) + (z + 1) \\&= ((x + y) + z) + 1 \\&= (x + (y + z)) + 1 \\&= x + ((y + z) + 1) \\&= x + (y + (z + 1)) \\&= x + (y + s(z))
+		\end{align*}
+		So if $z \in G$ then $s(z) \in G$, and therefore $G = \N$.
+	\end{proof}
+	\item[3.] $1 + a = s(a) = a + 1$.
+	\begin{proof}
+		It follows from the definition of +, that $a + 1 = s(a)$. Let $G = \left\{a \in N: 1 + a = s(a)\right\}$. $1 + 1 = s(1)$, so $1 \in G$. Now, let $a \in G$. Then $(1 + a) + 1 = s(1 + a) = 1 + s(a) = 1 + (1 + a)$. So $a \in G$, and therefore $G = \N$.
+	\end{proof}
+	\item[4.] $a + b = b + a$
+\end{enumerate}
+
 \end{document}
