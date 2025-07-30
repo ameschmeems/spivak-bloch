@@ -112,7 +112,7 @@
 \begin{enumerate}
 	\item[2.] $(a + b) + c = a + (b + c)$
 	\begin{proof}
-		Let \[G = \left\{z\in \N: \text{ if } x,y \in \N \text{ and } (x + y) + z = x + (y + z)\right\}.\]
+		Let \[G = \left\{z\in \N: \text{ if } x,y \in \N \text, (x + y) + z = x + (y + z)\right\}.\]
 		Then $(x + y) + 1 = s(x + y) = x + s(y) = x + (y + 1)$, so $1 \in G$.
 		Now, let $z \in G$. Then 
 		\begin{align*}
@@ -122,9 +122,18 @@
 	\end{proof}
 	\item[3.] $1 + a = s(a) = a + 1$.
 	\begin{proof}
-		It follows from the definition of +, that $a + 1 = s(a)$. Let $G = \left\{a \in N: 1 + a = s(a)\right\}$. $1 + 1 = s(1)$, so $1 \in G$. Now, let $a \in G$. Then $(1 + a) + 1 = s(1 + a) = 1 + s(a) = 1 + (1 + a)$. So $a \in G$, and therefore $G = \N$.
+		It follows from the definition of +, that $a + 1 = s(a)$. Let $G = \left\{a \in N: 1 + a = s(a)\right\}$. $1 + 1 = s(1)$, so $1 \in G$. Now, let $a \in G$. Then $(1 + a) + 1 = s(1 + a) = 1 + s(a) = 1 + (1 + a)$. So $s(a) \in G$, and therefore $G = \N$.
 	\end{proof}
 	\item[4.] $a + b = b + a$
+	\begin{proof}
+		Let \[G = \left\{a \in \N: \text{ if } b \in \N, a + b = b + a \right\}.\]
+		Let $b \in N$. It follows that $1 + b = b + 1$, so $1 \in G$. Now, let $a \in G$. Then \[(a + 1) + b = (1 + a) + b = 1 + (a + b) = 1 + (b + a) = (b + a) + 1 = b + (a + 1).\] So $s(a) \in G$, and therefore $G = \N$.
+	\end{proof}
+	\item[7.] $a \cdot 1 = a = 1 \cdot a$
+	\begin{proof}
+		It follows from the definition of $\cdot$ that $a \cdot 1 = a$. Let $G = \left\{a \in \N: 1 \cdot a = a\right\}$. Since $1 \cdot 1 = 1$, we know that $1 \in G$. Let $a \in G$. Then \[1 \cdot s(a) = (1 \cdot a) + 1 = a + 1 = s(a).\] So $s(a) \in \N$, and therefore $G = \N$.
+	\end{proof}
+	\item[8.] $(a + b)c = ac + bc$
 \end{enumerate}
 
 \end{document}
