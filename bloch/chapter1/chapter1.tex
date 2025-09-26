@@ -65,6 +65,7 @@
 		\item $a \cdot 1 = a = 1\cdot a$ (Identity Law for Multiplication).
 		\item $(a + b)c = ac + bc$ (Distributive Law).
 		\item $ab = ba$ (Commutative Law for Multiplication).
+		\item $c(a + b) = ca + cb$ (Distributive Law)
 		\item $(ab)c = a(bc)$ (Associative Law for Multiplication).
 		\item If $ac = bc$ then $a = b$ (Cancellation Law for Multiplication).
 		\item $ab = 1$ if and only if $a = 1 = b$.
@@ -134,6 +135,27 @@
 		It follows from the definition of $\cdot$ that $a \cdot 1 = a$. Let $G = \left\{a \in \N: 1 \cdot a = a\right\}$. Since $1 \cdot 1 = 1$, we know that $1 \in G$. Let $a \in G$. Then \[1 \cdot s(a) = (1 \cdot a) + 1 = a + 1 = s(a).\] So $s(a) \in \N$, and therefore $G = \N$.
 	\end{proof}
 	\item[8.] $(a + b)c = ac + bc$
+	\begin{proof}
+		Let $G \left\{c \in \N: \text{ if } a,b \in \N, \text{ then }(a + b)c = ac + bc\right\}$.
+		We know that $(a + b) \cdot 1 = a + b = a \cdot 1 + b \cdot 1$, so $1 \in G$.
+		Let $c \in \N$. Then \[(a + b) \cdot s(c) = (a + b) \cdot c + (a + b) = ac + bc + a + b = (ac + a) + (bc + b) = a \cdot s(c) + b \cdot s(c).\] So $s(c) \in G$, and therefore $G = \N$.
+	\end{proof}
+	\item[9. ] $ab = ba$
+	\begin{proof}
+		Let $G = \left\{a \in \N: \text{ if } b \in \N, \text{ then }ab = ba\right\}$. We've shown in (7) that $1 \cdot b = b \cdot 1$, so $1 \in G$. Let $a \in G$. Then \[ b \cdot s(a) = b \cdot (a + 1) = ba + b = ab + 1 \cdot b = (a + 1) \cdot b = s(a) \cdot b. \] So $s(a) \in G$, and therefore $G = \N$.
+	\end{proof}
+	\item[10. ] $c(a + b) = ca + cb$
+	\begin{proof}
+		Based on (9) and (8), we know that $(a + b) = ac + bc = ca + cb$ and $(a + b)c = c(a + b)$, so $c(a + b) = ca + cb$.
+	\end{proof}
+	\item[11. ] $(ab)c = a(bc)$
+	\begin{proof}
+		Let $G = \left\{c \in \N: \text{ if } a,b \in \N, \text{ then } (ab)c = a(bc)\right\}$. Since $(ab)\cdot 1 = ab = a(b \cdot 1)$, $1 \in G$. Now let $c \in G$. Then \[ (ab)\cdot s(c) = (ab)(c + 1) = (ab)c + ab = a(bc) + ab = a(bc + b) = a(b(c + 1)) = a(b \cdot s(c)). \] Then $s(c) \in G$, so $G = \N$.
+	\end{proof}
+	\item[13. ] $ab = 1 \text{ if and only if } a = 1 = b$.
+	\begin{proof}
+		If $a = 1 = b$, it is obvious that $ab = 1$. Suppose that $ab = 1$, and let $b \ne 1$. Then there exists such $c \in \N$ that $c + 1 = b$. Then \[ab = a \cdot (c + 1) = ac + a = 1. \] This contradicts point (5) of the theorem ($a + b \ne 1$). Then $b = 1$, and $1 = ab = a \cdot 1 = a$, so $a = 1 = b$.
+	\end{proof}
 \end{enumerate}
 
 \end{document}
