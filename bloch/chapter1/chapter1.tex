@@ -212,4 +212,66 @@
 	\end{proof}
 \end{enumerate}
 
+\subsubsection*{5. Let $a, b \in \N$. Prove that if $a + a = b + b$, then $a = b$.}
+
+\begin{proof}
+	Let $a,b \in \N$ such that $a + a = b + b$. Then $a + a = 2a$ and $b + b = 2b$, so $2a = 2b$, so $a = b$.
+\end{proof}
+
+\subsubsection*{6. Let $b \in \N$. Prove that
+	\[\left\{n \in \N|1 \le n \le b\right\} \cup \left\{n \in \N | b + 1 \le n\right\} = \N\]
+	\[\left\{n \in \N | 1 \le n \le b\right\} \cap \left\{n \in \N | b+1 \le n\right\} = \emptyset\]
+}
+
+\begin{proof}
+	Let $A = \left\{n \in \N|1 \le n \le b\right\} \cup \left\{n \in \N | b + 1 \le n\right\}$. Then $A \subseteq \N$ and $1 \in A$. Now suppose that $a \in A$. We consider three cases:
+
+	\begin{enumerate}
+		\item[Case 1:] $1 \le a < b$
+		
+		Then $a + 1 \le b$, so $a + 1 \in A$.
+
+		\item[Case 2:] $a = b$
+		
+		Then $a + 1 = b + 1$, so $a + 1 \in A$.
+
+		\item[Case 3:] $a > b$
+		
+		Then $b + 1 \le a$, so $b + 1 < a + 1$, so $a + 1 \in A$.
+	\end{enumerate}
+	This means that if $a \in A$, then $a + 1 \in A$, so $A = \N$.
+\end{proof}
+
+\begin{proof}
+	Let $A = \left\{n \in \N | 1 \le n \le b\right\} \cap \left\{n \in \N | b+1 \le n\right\}$ and $a \in \left\{n \in \N | 1 \le n \le b\right\}$. Then $a \le b$, so $a < b + 1$. It then follows that $a \notin \left\{n \in \N | b+1 \le n\right\}$, so $A = \emptyset$.
+\end{proof}
+
+\subsubsection*{7. Let $A \subseteq \N$ be a set. The set $A$ is closed if $a \in A$ implies $a + 1 \in A$. Suppose that $A$ is closed.}
+
+	\begin{enumerate}
+		\item[(1)] Prove that if $a \in A$ and $n \in N$, then $a + n \in A$.
+		
+		\begin{proof}
+			Let $B = \left\{n \in \N | a + n \in A\right\}$. Then $1 \in B$. Now let $b \in B$. Then since $a + b \in A$, it follows that $a + (b + 1) = (a + b) + 1 \in A$, and $(b + 1) \in B$, so $B = \N$.
+		\end{proof}
+		
+		\item[(2)] Prove that if $a \in A$, then $\left\{x \in \N | x \le a\right\} \subseteq A$. 
+		
+		\begin{proof}
+			Let $x \in \N$ such that $x \ge a$. We consider two cases:
+
+			\begin{enumerate}
+				\item[Case 1:] $x = a$
+				
+				Then trivially, $x \in A$.
+
+				\item[Case 2:] $x > a$.
+				
+				Then there exists such $n \in \N$, that $a + n = x$. It then follows from part (1) that $x \in A$.
+			\end{enumerate}
+		\end{proof}
+	\end{enumerate}
+
+\subsubsection*{8. Suppose that the set $\N$ together with the element $1 \in \N$ and the function $s: \N \mapsto \N$, and that the set $\N'$ together with the element $1' \in \N'$ and the function $s':\N'\mapsto\N'$, both satisfy the Peano Postulates. Prove that there is a bijective function $f: \N \mapsto \N'$ such that $f(1) = 1'$ and $f\circ s = s'\circ f$. The existence of such a bijective function proves that the natural numbers are essentially unique. The existence of the function $f$ follows immediately from the existence part of Theorem 1.2.4; the trickier aspect of this exercise is to prove that $f$ is bijective. To do that, find an inverse for $f$ by using the existence part of Theorem 1.2.4 again, and then prove that the function you found is an inverse of $f$ by using the uniqueness part of Theorem 1.2.4.}
+
 \end{document}
