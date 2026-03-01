@@ -255,7 +255,7 @@
 			Let $B = \left\{n \in \N | a + n \in A\right\}$. Then $1 \in B$. Now let $b \in B$. Then since $a + b \in A$, it follows that $a + (b + 1) = (a + b) + 1 \in A$, and $(b + 1) \in B$, so $B = \N$.
 		\end{proof}
 		
-		\item[(2)] Prove that if $a \in A$, then $\left\{x \in \N | x \le a\right\} \subseteq A$. 
+		\item[(2)] Prove that if $a \in A$, then $\left\{x \in \N | x \ge a\right\} \subseteq A$. 
 		
 		\begin{proof}
 			Let $x \in \N$ such that $x \ge a$. We consider two cases:
@@ -272,6 +272,14 @@
 		\end{proof}
 	\end{enumerate}
 
-\subsubsection*{8. Suppose that the set $\N$ together with the element $1 \in \N$ and the function $s: \N \mapsto \N$, and that the set $\N'$ together with the element $1' \in \N'$ and the function $s':\N'\mapsto\N'$, both satisfy the Peano Postulates. Prove that there is a bijective function $f: \N \mapsto \N'$ such that $f(1) = 1'$ and $f\circ s = s'\circ f$. The existence of such a bijective function proves that the natural numbers are essentially unique. The existence of the function $f$ follows immediately from the existence part of Theorem 1.2.4; the trickier aspect of this exercise is to prove that $f$ is bijective. To do that, find an inverse for $f$ by using the existence part of Theorem 1.2.4 again, and then prove that the function you found is an inverse of $f$ by using the uniqueness part of Theorem 1.2.4.}
+\subsubsection*{8. Suppose that the set $\N$ together with the element $1 \in \N$ and the function $s: \N \mapsto \N$, and that the set $\N'$ together with the element $1' \in \N'$ and the function $s':\N'\mapsto\N'$, both satisfy the Peano Postulates. Prove that there is a bijective function $f: \N \mapsto \N'$ such that $f(1) = 1'$ and $f\circ s = s'\circ f$.}
+
+\begin{proof}
+	The existence of a function $f: \N \mapsto \N'$ such that $f(1) = 1'$ and $f\circ s = s'\circ f$ follows from Theorem 1.2.4, so it remains to prove that $f$ is bijective.
+
+	Let $g: \N' \mapsto \N$ be a function such that $g(1') = 1$ and $g \circ s' = s \circ g$. The existence of such a function follows from Theorem 1.2.4. Let $A = \left\{n \in \N: g \circ f(n) = n \right\}$. Then $g(f(1)) = g(1') = 1$, so $1 \in A$. Now let $a \in A$. Then \[ g(f(s(a))) = g(s'(f(a))) = s(g(f(a))) = s(a), \] so $s(a) \in A$, and therefore $A = \N$.
+
+	Now let $B = \left\{n' \in \N': f \circ g(n') = n'\right\}$. Then $f(g(1')) = f(1) = 1'$, so $1 \in B$. Let $b \in B$. Then \[ f(g(s'(b))) = f(s(g(b))) = s'(f(g(b))) = s'(b), \] so $s'(b) \in B$, and therefore $B = \N'$.
+\end{proof}
 
 \end{document}
