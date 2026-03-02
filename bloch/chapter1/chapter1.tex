@@ -282,4 +282,98 @@
 	Now let $B = \left\{n' \in \N': f \circ g(n') = n'\right\}$. Then $f(g(1')) = f(1) = 1'$, so $1 \in B$. Let $b \in B$. Then \[ f(g(s'(b))) = f(s(g(b))) = s'(f(g(b))) = s'(b), \] so $s'(b) \in B$, and therefore $B = \N'$.
 \end{proof}
 
+\section{Constructing the Integers}
+
+\begin{definition}
+	The relation $\sim$ on $\N \times \N$ is defined by $(a,b)\sim(c,d)$ if and only if $a+d = b+c$ for all $(a,b),(c,d)\in \N \times \N$.
+\end{definition}
+
+\begin{lemma}
+	The relation $\sim$ is an equivalence relation on $\N \times \N$.
+\end{lemma}
+
+\begin{definition}
+	The set of integers, denoted $\Z$, is the set of equivalence classes of $\N \times \N$ with respect to the equivalence relation $\sim$.
+
+	The elements $\hat{0}, \hat{1} \in \Z$ are defined by $\hat{0} = [(1, 1)]$ and $\hat{1} = [(1 + 1, 1)]$. The binary operations $+$ and $\cdot$ on $\Z$ are defined by
+	\[ [(a,b)] + [(c,d)] = [(a + c, b + d)] \]
+	\[ [(a,b)] \cdot [(c,d)] = [(ac + bd, ad + bc)] \]
+	for all $[(a,b)], [(c,d)] \in \Z$. The unary operation $-$ on $\Z$ is defined by $-[(a,b)] = [(b,a)]$ for all $[(a,b)] \in \Z$. The relation $<$ on $\Z$ is defined by $[(a,b)] < [(c,d)]$ if and only if $a + d < b + c$, for all $[(a,b)],[(c,d)] \in \Z$. The relation $\le$ on $\Z$ is defined by $[(a,b)] \le [(c,d)]$ if and only if $[(a,b)] < [(c,d)]$ or $[(a,b)] = [(c,d)]$, for all $[(a,b)], [(c,d)] \in \Z$.
+\end{definition}
+
+\begin{lemma}
+	The binary operations $+$ and $\cdot$, and the unary operation $-$ and the relation $<$, all on $\Z$, are well-defined.
+\end{lemma}
+
+\begin{theorem}
+	Let $x,y,z \in \Z$
+	\begin{enumerate}
+		\item $(x + y) + z = x + (y + z)$ (Associative Law for Addition)
+		\item $x + y = y + x$ (Commutative Law for addition)
+		\item $x + \hat{0} = x$ (Identity Law for Addition)
+		\item $x + (-x) = \hat{0}$ (Inverses Law for Addition)
+		\item $(xy)z = x(yz)$ (Associative Law for Multiplication)
+		\item $xy = yx$ (Commutative Law for Multiplication)
+		\item $x \cdot \hat{1} = x$ (Identity Law for Multiplication)
+		\item $x(y + z) = xy + xz$ (Distributive Law)
+		\item If $xy = \hat{0}$, then $x = \hat{0}$ or $y = \hat{0}$ (No Zero Divisors Law)
+		\item Precisely one of $x < y$ or $x = y$ or $x > y$ holds (Trichotomy Law)
+		\item If $x < y$ and $y < z$, then $x < z$ (Transitive Law)
+		\item If $x < y$ then $x + z < y + z$ (Addition Law for Order)
+		\item If $x < y$ and $z > \hat{0}$ then $xz < yz$ (Multiplication Law for Order)
+		\item $\hat{0} \ne \hat{1}$ (Non-Triviality)
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	Let $x \in \Z$. The number $x$ is positive if $x > \hat{0}$, and the number $x$ is negative if $x < \hat{0}$.
+\end{definition}
+
+\begin{theorem}
+	Let $i: \N \mapsto \Z$ be defined by $i(n) = [(n + 1, 1)]$ for all $n \in \N$.
+	\begin{enumerate}
+		\item The function $i: \N \mapsto \Z$ is injective.
+		\item $i(\N) = x \left\{ x \in \Z | x > \hat{0} \right\}$
+		\item $i(1) = \hat{1}$
+		\item Let $a,b \in \N$. Then 
+			\begin{enumerate}
+				\item[a.] $i(a + b) = i(a) + i(b)$.
+				\item[b.] $i(ab) = i(a)i(b)$
+				\item[c.] $a < b$ if and only if $i(a) < i(b)$.
+			\end{enumerate}
+	\end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+	Let $x,y,z \in \Z$.
+	\begin{enumerate}
+		\item If $x + z = y + z$ then $x = y$ (Cancellation Law for Addition)
+		\item $-(-x) = x$
+		\item $-(x + y) = (-x) + (-y)$
+		\item $x \cdot 0 = 0$
+		\item If $z \ne 0$ and if $xz = yz$ then $x = y$ (Cancellation Law for Multiplication)
+		\item $(-x)y = -xy = x(-y)$
+		\item $xy = 1$ if and only if $x = 1 = y$ or $x = -1 = y$
+		\item $x > 0$ if and only if $-x < 0$, and $x < 0$ if and only if $-x > 0$
+		\item $0 < 1$
+		\item If $x \le y$ and $y \le x$ then $x = y$
+		\item If $x > 0$ and $y > 0$, then $xy > 0$. If $x > 0$ and $y < 0$ then $xy < 0$
+	\end{enumerate}
+\end{lemma}
+
+\begin{theorem}
+	Let $x \in \Z$. Then there is no $y \in \Z$ such that $x < y < x + 1$.
+\end{theorem}
+
+\subsection*{Exercises}
+
+\subsubsection*{2. Complete the proof of Lemma 1.3.2. That is, prove that the relation $\sim$ is transitive.}
+
+\begin{proof}
+	Let $(a,b), (c,d), (e,f) \in \N \times \N$ such that $(a,b) \sim (c,d)$ and $(c,d) \sim (e,f)$, that is $a + d = b + c$ and $c + f = d + e$. Then
+	\[ a + d + c + f = b + c + d + e \]
+	\[ (a + f) + (d + c) = (b + e) + (d + c) \]
+	\[ a + f = b + e, \] so $(a,b) \sim (e,f)$, so the relation $\sim$ is transitive.
+\end{proof}
+
 \end{document}
